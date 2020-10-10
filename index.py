@@ -2,12 +2,15 @@ from flask import Flask, render_template
 import markdown, subprocess
 
 
-# app = Flask(__name__)
+app = Flask(__name__)
 
-# @app.route("/")
+@app.route("/")
 def index():
     poems = []
-    all_poems = subprocess.run(["node", "poem-scraper.js"], stdout=subprocess.PIPE).stdout.decode()
+    all_poems = subprocess.run(
+        ["node", "poem-scraper.js"],
+        stdout=subprocess.PIPE
+    ).stdout.decode()
     for poem in all_poems.split("<ENDPOEM>"):
         poem_lines = poem.strip().split("\n")
         poems.append({
@@ -15,9 +18,7 @@ def index():
             "text": "\n".join(poem_lines[2:]),
         })
 
-    # return render_template("index.html", body=markdown("index.md"), poems=poems)
-    for i in poems:
-        print(i)
-
-
-index()
+    return render_template(
+        "index.html",
+        poems=poems
+    )
