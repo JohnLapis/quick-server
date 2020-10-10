@@ -15,10 +15,10 @@ def index():
         poem_lines = poem.strip().split("\n")
         poems.append({
             "title": poem_lines[0],
-            "text": "\n".join(poem_lines[2:]),
+            "text": poem_lines[2:],
         })
 
     return render_template(
-        "index.html",
+        "base.html",
         poems=poems
     )

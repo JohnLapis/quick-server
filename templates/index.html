@@ -1,5 +1,8 @@
 <h1>Poemas pegos de algum site</h1>
 <p>{% for poem in poems %}</p>
 <h2>{{ poem.title }}</h2>
-<h2>{{ poem.text }}</h2>
+<p>{% for verse in poem.text %}</p>
+<p>{{ verse }}</p>
+<p>{% endfor %}</p>
+<hr />
 <p>{% endfor %}</p>
