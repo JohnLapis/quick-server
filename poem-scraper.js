@@ -4,8 +4,8 @@ let url = "https://poemasinfantis.blogs.sapo.pt";
 
 request(url, (error, response, body) => {
     const $ = cheerio.load(body);
-    const limit = 10;
-    const poems = $("#posts").children().slice(2, limit).toArray();
+    const limit = 2; // 10
+    const poems = $("#posts").children().slice(2, limit + 2).toArray();
     for(let poem of poems) {
         const textLines = $(".posttext", poem).text().trim().split("\n");
         const title = textLines.shift();
@@ -13,4 +13,6 @@ request(url, (error, response, body) => {
         console.log(title);
         console.log();
         console.log(text);
+        console.log("<ENDPOEM>");
+    }
 });
