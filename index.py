@@ -1,5 +1,5 @@
 from flask import Flask, render_template
-import markdown, subprocess
+import subprocess
 
 
 app = Flask(__name__)
