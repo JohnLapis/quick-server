@@ -13,6 +13,6 @@ request(url, (error, response, body) => {
         console.log(title);
         console.log();
         console.log(text);
-        console.log("<ENDPOEM>");
+        console.log("=====");
     }
 });

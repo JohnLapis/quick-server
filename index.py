@@ -11,7 +11,7 @@ def index():
     all_poems = subprocess.run(
         ["node", "poem-scraper.js"], stdout=subprocess.PIPE
     ).stdout.decode()
-    for poem in all_poems.split("<ENDPOEM>"):
+    for poem in all_poems.split("====="):
         poem_lines = poem.strip().split("\n")
         poems.append(
             {
