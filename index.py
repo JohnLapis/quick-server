@@ -21,3 +21,8 @@ def index():
         )
 
     return render_template("base.html", poems=poems)
+
+
+@app.route("/<name>")
+def hello(name):
+    return f"Oiiiii, {name}"
