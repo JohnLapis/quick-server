@@ -8,6 +8,8 @@ verify_ssl = true
 [packages]
 flask = "*"
 markdown = "*"
+bottle = "*"
+requests-html = "*"
 
 [requires]
 python_version = "3.6"
