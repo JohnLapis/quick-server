@@ -1,5 +1,5 @@
-from bottle import route, run, template
-import subprocess
+from bottle import route, run, jinja2_template as template
+import subprocess, jinja2
 
 
 @route("/")
@@ -17,8 +17,8 @@ def index():
             }
         )
 
-    return template("templates/base.html", poems=poems)
+    return template("templates/index.html", poems=poems)
 
 
 if __name__ == '__main__':
-    run(host="0.0.0.0")
+    run()
