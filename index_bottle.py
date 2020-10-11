@@ -1,4 +1,4 @@
-from bottle import route, run, template
+from bottle import route, run, jinja2_template as template
 import subprocess, jinja2
 
 
@@ -17,12 +17,7 @@ def index():
             }
         )
 
-    with open("templates/index.html", "rb") as f:
-        template = jinja2.Template(f.read())
-
-    html = template.render(poems=poems)
-
-    return template(html)
+    return template("templates/index.html", poems=poems)
 
 
 if __name__ == '__main__':
