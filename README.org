@@ -1,0 +1,6 @@
+* Why
+  I've used many tools redundantly for the same task just because.
+  - Bottle and Flask for backend;
+  - Jinja2 as templating engine;
+  - Cheerio (nodejs) and requests-html (based on requests) for parsing;
+  - Gunicorn as web server
